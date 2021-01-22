@@ -1,25 +1,24 @@
 <template>
-    <div>
-        <div v-for="todo in todos" v-bind:key="todo.id">
-            <TodoItem v-bind:todo="todo" v-on:del-todo="$emit('del-todo', todo.id)" />
-        </div>
+  <div>
+    <div
+      v-for="todo in allTodos"
+      :key="todo.id"
+    >
+      <TodoItem :todo="todo" />
     </div>
+  </div>
 </template>
 
 <script>
 import TodoItem from './TodoItem';
+import { mapGetters } from 'vuex';
 
 export default {
     name: 'Todos',
     components: {
         TodoItem
     },
-    props: {
-        todos: {
-            type: Array,
-            default: () => []
-        }
-    }
+    computed: mapGetters(['allTodos'])
 }
 </script>
 

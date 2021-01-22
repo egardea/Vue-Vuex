@@ -1,11 +1,23 @@
 <template> 
-    <div class="todoItem" v-bind:class="{'todoItem--isCompleted':todo.completed}">
-        <p>
-            <input type="checkbox" :checked="todo.completed" @change="markComplete">
-            {{ todo.title }}
-            <button @click="$emit('del-todo', todo.id)" class="todoItem__deleteBtn">X</button>
-        </p>
-    </div>
+  <div
+    class="todoItem"
+    :class="{'todoItem--isCompleted':todo.completed}"
+  >
+    <p>
+      <input
+        type="checkbox"
+        :checked="todo.completed"
+        @click="toggleCompleted(todo.id)"
+      >
+      {{ todo.title }}
+      <button
+        class="todoItem__deleteBtn"
+        @click="deleteTodo(todo.id)"
+      >
+        X
+      </button>
+    </p>
+  </div>
 </template>
 
 <script>
@@ -18,9 +30,12 @@ export default {
         },
     },
     methods: {
-        markComplete() {
-            this.todo.completed = !this.todo.completed;
-        }
+      toggleCompleted (todoId) {
+        this.$store.commit('toggleCompleted', todoId);
+      },
+      deleteTodo (todoId) {
+        this.$store.commit('deleteTodo', todoId);
+      }
     }
 }
 </script>

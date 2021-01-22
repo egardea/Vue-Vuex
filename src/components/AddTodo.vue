@@ -1,10 +1,19 @@
 <template>
-    <div>
-        <form @submit="addTodo">
-            <input v-model="title" type="text" name="title" placeholder="Add Todo...">
-            <input type="submit" name="submit" class="btn">
-        </form>
-    </div>
+  <div>
+    <form @submit="addTodo">
+      <input
+        v-model="title"
+        type="text"
+        name="title"
+        placeholder="Add Todo..."
+      >
+      <input
+        type="submit"
+        name="submit"
+        class="btn"
+      >
+    </form>
+  </div>
 </template>
 
 <script>
@@ -25,7 +34,7 @@ export default {
                 completed: false
             }
 
-            this.$emit('add-todo', newTodo);
+            this.$store.commit('addTodo', newTodo);
             this.title = '';
         }
     }

@@ -1,7 +1,7 @@
 <template>
-    <header class="header">
-        <h1>TodoList</h1>
-    </header>
+  <header class="header">
+    <h1>TodoList</h1>
+  </header>
 </template>
 
 <script>
