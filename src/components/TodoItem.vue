@@ -58,5 +58,7 @@ export default {
         height: 25px;
         width: 25px;
         cursor: pointer;
+        position: absolute;
+        right: 25px;
     }
 </style>

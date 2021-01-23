@@ -9,40 +9,40 @@ const store = new Vuex.Store({
         {
           id: 1,
           title: 'Todo one',
-          completed: false
+          completed: false,
         },
         {
           id: 2,
           title: 'Todo two',
-          completed: true
+          completed: true,
         },
         {
           id: 3,
           title: 'Todo three',
-          completed: false
+          completed: false,
         },
-      ]
+      ],
     },
     getters: {
       allTodos: state => {
         return state.todos;
-      }
+      },
     },
     mutations: {
-      addTodo (state, todo) {
-        state.todos.push(todo)
+      addTodo(state, todo) {
+        state.todos.push(todo);
       },
-      toggleCompleted (state, todoId) {
+      toggleCompleted(state, todoId) {
         state.todos.forEach((todo) => {
           if (todo.id === todoId) {
             todo.completed = !todo.completed;
           }
         });
       },
-      deleteTodo (state, todoId) {
+      deleteTodo(state, todoId) {
         state.todos = state.todos.filter(todo => todo.id !== todoId);
-      }
-    }
+      },
+    },
 });
 
 export default store;

@@ -21,8 +21,8 @@ export default {
     name: 'AddTodo',
     data() {
         return {
-            title: ''
-        }
+            title: '',
+        };
     },
     methods: {
         addTodo(event) {
@@ -31,14 +31,14 @@ export default {
             const newTodo = {
                 id: Math.floor(Math.random() * 100),
                 title: this.title,
-                completed: false
-            }
+                completed: false,
+            };
 
             this.$store.commit('addTodo', newTodo);
             this.title = '';
-        }
-    }
-}
+        },
+    },
+};
 </script>
 
 <style scoped>
