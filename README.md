@@ -1,4 +1,4 @@
-# tutorial
+# Vue/Vuex todo app
 
 ## Project setup
 ```
