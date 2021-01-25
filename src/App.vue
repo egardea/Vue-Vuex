@@ -7,18 +7,18 @@
 </template>
 
 <script>
-import Todos from './components/Todos';
-import Header from './components/layout/Header';
-import AddTodo from './components/AddTodo';
+  import Todos from './components/Todos';
+  import Header from './components/layout/Header';
+  import AddTodo from './components/AddTodo';
 
-export default {
-  name: 'App',
-  components: {
-    Todos,
-    Header,
-    AddTodo
-  },
-}
+  export default {
+    name: 'app',
+    components: {
+      Todos,
+      Header,
+      AddTodo,
+    },
+  };
 </script>
 
 <style>

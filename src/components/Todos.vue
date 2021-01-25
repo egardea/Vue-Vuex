@@ -10,16 +10,16 @@
 </template>
 
 <script>
-import TodoItem from './TodoItem';
-import { mapGetters } from 'vuex';
+  import TodoItem from './TodoItem';
+  import { mapGetters } from 'vuex';
 
-export default {
-    name: 'Todos',
+  export default {
+    name: 'todos',
     components: {
-        TodoItem
+      TodoItem,
     },
-    computed: mapGetters(['allTodos'])
-}
+    computed: mapGetters(['allTodos']),
+  };
 </script>
 
 <style scoped>

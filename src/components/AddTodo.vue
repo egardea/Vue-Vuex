@@ -6,39 +6,39 @@
         type="text"
         name="title"
         placeholder="Add Todo..."
-      >
+      />
       <input
         type="submit"
         name="submit"
         class="btn"
-      >
+      />
     </form>
   </div>
 </template>
 
 <script>
-export default {
-    name: 'AddTodo',
+  export default {
+    name: 'add-todo',
     data() {
-        return {
-            title: '',
-        };
+      return {
+        title: '',
+      };
     },
     methods: {
-        addTodo(event) {
-            event.preventDefault();
+      addTodo(event) {
+        event.preventDefault();
 
-            const newTodo = {
-                id: Math.floor(Math.random() * 100),
-                title: this.title,
-                completed: false,
-            };
+        const newTodo = {
+          id: Math.floor(Math.random() * 100),
+          title: this.title,
+          completed: false,
+        };
 
-            this.$store.commit('addTodo', newTodo);
-            this.title = '';
-        },
+        this.$store.commit('addTodo', newTodo);
+        this.title = '';
+      },
     },
-};
+  };
 </script>
 
 <style scoped>

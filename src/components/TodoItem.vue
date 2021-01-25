@@ -8,7 +8,7 @@
         type="checkbox"
         :checked="todo.completed"
         @click="toggleCompleted(todo.id)"
-      >
+      />
       {{ todo.title }}
       <button
         class="todoItem__deleteBtn"
@@ -21,23 +21,23 @@
 </template>
 
 <script>
-export default {
-    name: 'TodoItem',
+  export default {
+    name: 'todo-item',
     props: {
-        todo: {
-            type: Object,
-            default: () => {},
-        },
+      todo: {
+        type: Object,
+        default: () => {},
+      },
     },
     methods: {
-      toggleCompleted (todoId) {
+      toggleCompleted(todoId) {
         this.$store.commit('toggleCompleted', todoId);
       },
-      deleteTodo (todoId) {
+      deleteTodo(todoId) {
         this.$store.commit('deleteTodo', todoId);
-      }
-    }
-}
+      },
+    },
+  };
 </script>
 
 <style scoped>
